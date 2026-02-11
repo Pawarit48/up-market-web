@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครสมาชิก</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* เพิ่มเพื่อให้ปุ่มย้อนกลับกดได้แน่นอน */
+        .auth-back-btn { cursor: pointer; z-index: 10; }
+    </style>
+</head>
+<body id="page-register">
+    <div class="auth-header">
+        <i class="fas fa-arrow-left auth-back-btn" onclick="window.location.href='login-screen.html'"></i>
+        สมัครสมาชิก
+    </div>
+    <div class="auth-form-container">
+        <div class="form-card">
+            <div class="role-selector">
+                <div class="role-option active" onclick="selectRole('student', this)">นิสิต</div>
+                <div class="role-option" onclick="selectRole('staff', this)">บุคลากร</div>
+                <div class="role-option" onclick="selectRole('general', this)">ทั่วไป</div>
+            </div>
+            <input type="hidden" id="reg-role" value="student">
+            
+            <label class="form-label">ชื่อจริง-นามสกุล</label>
+            <input type="text" id="reg-name" class="form-input">
+            <label class="form-label">ชื่อเล่น</label>
+            <input type="text" id="reg-nick" class="form-input">
+            <label class="form-label">เบอร์โทร / Line ID</label>
+            <input type="text" id="reg-contact" class="form-input">
+
+            <div id="field-student">
+                <label class="form-label">รหัสนิสิต (@up.ac.th)</label>
+                <input type="text" id="reg-studentid" class="form-input" placeholder="6xxxxxxxxx">
+                <label class="form-label">คณะ</label>
+                <select id="reg-fac" class="form-input" onchange="updateBranches()">
+                    <option value="">กำลังโหลดข้อมูล...</option>
+                </select>
+                <label class="form-label">สาขา</label>
+                <select id="reg-branch" class="form-input">
+                    <option value="">-- เลือกสาขา --</option>
+                </select>
+            </div>
+
+            <div id="field-staff" style="display: none;">
+                <label class="form-label">ตำแหน่ง</label>
+                <input type="text" id="reg-position" class="form-input" placeholder="เช่น อาจารย์, เจ้าหน้าที่">
+            </div>
+
+            <div id="field-general" style="display: none;">
+                <label class="form-label">ชื่อร้านค้า (ถ้าไม่มีให้ใส่ -)</label>
+                <input type="text" id="reg-shopname" class="form-input" placeholder="-">
+            </div>
+
+            <label class="form-label">รหัสผ่าน</label>
+            <input type="password" id="reg-pass" class="form-input">
+            <label class="form-label">ยืนยันรหัสผ่าน</label>
+            <input type="password" id="reg-confirm" class="form-input">
+
+            <button class="btn-primary" onclick="handleRegister()">ยืนยันการสมัคร</button>
+        </div>
+    </div>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

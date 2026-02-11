@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #78288c; /* สีม่วง UP */
+    --primary-dark: #4a148c;
+    --secondary-color: #f3e5f5;
+    --text-color: #333;
+    --gray-light: #f8f9fa;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --warning: #f1c40f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+body { background-color: #f9f9f9; min-height: 100vh; overflow-x: hidden; overflow-y: auto; padding-bottom: 80px; } 
+a { text-decoration: none; color: inherit; }
+.hidden { display: none !important; }
+
+/* HEADER */
+.main-header {
+    background: white; padding: 10px 15px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; justify-content: space-between; align-items: center;
+}
+.brand-title { font-size: 1.1rem; font-weight: 600; color: var(--primary-color); cursor: pointer; }
+.header-actions { display: flex; align-items: center; gap: 15px; }
+.header-icon { font-size: 1.2rem; color: #666; cursor: pointer; position: relative; }
+.notif-badge {
+    position: absolute; top: -5px; right: -5px; background: var(--danger); color: white;
+    font-size: 0.6rem; width: 16px; height: 16px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-weight: bold;
+}
+
+/* AUTH SCREENS */
+.auth-header {
+    min-height: 150px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;
+    display: flex; align-items: center; justify-content: center; position: relative;
+    box-shadow: 0 4px 15px rgba(120, 40, 140, 0.3); color: white; font-size: 1.5rem; font-weight: 600;
+}
+.auth-back-btn { position: absolute; left: 20px; top: 20px; color: white; font-size: 1.2rem; cursor: pointer; z-index: 10; }
+.auth-form-container { padding: 30px 20px; }
+.form-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+
+/* INPUTS & BUTTONS */
+.form-label { font-weight: 500; margin-bottom: 5px; display: block; color: #555; font-size: 0.9rem; margin-top: 10px; }
+.form-input {
+    width: 100%; padding: 12px 15px; border: 1px solid #eee; background: var(--gray-light);
+    border-radius: 12px; font-size: 0.95rem; outline: none; transition: 0.3s; margin-bottom: 10px;
+}
+.form-input:focus { border-color: var(--primary-color); background: white; }
+.form-input:disabled { background: #eee; color: #888; }
+
+.btn-primary {
+    width: 100%; padding: 12px; background: var(--primary-color); color: white;
+    border: none; border-radius: 10px; font-size: 1rem; font-weight: 500; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(120, 40, 140, 0.3); margin-top: 10px;
+}
+.btn-secondary {
+    width: 100%; padding: 12px; background: white; color: var(--primary-color);
+    border: 1px solid var(--primary-color); border-radius: 10px; font-size: 1rem;
+    font-weight: 500; margin-top: 10px; cursor: pointer;
+}
+.btn-danger { background: var(--danger) !important; color: white; box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); }
+
+/* ROLE SELECTOR */
+.role-selector { display: flex; background: #eee; padding: 4px; border-radius: 25px; margin-bottom: 15px; width: 100%; }
+.role-option { flex: 1; text-align: center; padding: 8px 0; border-radius: 20px; cursor: pointer; font-size: 0.9rem; color: #666; transition: 0.3s; }
+.role-option.active { background: white; color: var(--primary-color); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* HOME COMPONENTS */
+.search-container { padding: 10px 15px; background: white; }
+.search-box { position: relative; }
+.search-box input { width: 100%; padding: 8px 35px 8px 15px; border-radius: 20px; border: 1px solid #ddd; background: var(--gray-light); outline: none; }
+.search-box i { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #888; }
+
+.section-header { padding: 15px 15px 5px; display: flex; justify-content: space-between; align-items: center; }
+.section-title { font-weight: 600; color: var(--primary-color); display: flex; align-items: center; gap: 5px; }
+.sort-btn { font-size: 0.8rem; color: #666; border: 1px solid #ddd; padding: 4px 10px; border-radius: 15px; background: white; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+
+.horizontal-scroll { display: flex; overflow-x: auto; gap: 10px; padding: 0 15px 15px; scrollbar-width: none; }
+.h-card {
+    flex: 0 0 auto; width: 220px; background: white; border-radius: 10px;
+    overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border: 1px solid #eee; position: relative; cursor: pointer;
+}
+.h-img { width: 100%; height: 110px; object-fit: cover; }
+.h-info { padding: 8px; }
+
+.category-scroll { display: flex; overflow-x: auto; padding: 10px 15px; gap: 12px; background: white; margin-bottom: 10px; scrollbar-width: none; }
+.cat-item { flex: 0 0 auto; text-align: center; cursor: pointer; width: 60px; }
+.cat-icon { width: 50px; height: 50px; background-color: var(--secondary-color); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; color: var(--primary-color); font-size: 1.2rem; }
+.cat-item.active .cat-icon { background-color: var(--primary-color); color: white; }
+.cat-name { font-size: 0.75rem; color: #666; white-space: nowrap; }
+
+.product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 10px 15px; }
+.product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #f0f0f0; cursor: pointer; position: relative; }
+.product-img { width: 100%; height: 150px; object-fit: cover; background: #f5f5f5; }
+.product-info { padding: 10px; }
+.prod-title { font-size: 0.85rem; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prod-price { color: var(--primary-color); font-weight: 600; font-size: 0.95rem; }
+.prod-meta { font-size: 0.7rem; color: #999; }
+.sold-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: bold; font-size: 1.2rem; z-index: 5;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+    position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
+    background: white; display: flex; justify-content: space-around; padding: 10px 0;
+    border-top: 1px solid #eee; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 1000;
+}
+.nav-item { text-align: center; color: #999; font-size: 0.7rem; cursor: pointer; width: 25%; display: flex; flex-direction: column; align-items: center; }
+.nav-item.active { color: var(--primary-color); }
+.nav-icon { font-size: 1.4rem; display: block; margin-bottom: 2px; }
+.sell-btn {
+    background: var(--primary-color); color: white; width: 45px; height: 45px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(120, 40, 140, 0.4); cursor: pointer; position: relative; top: -25px; border: 2px solid white;
+}
+
+/* PROFILE & OTHERS */
+.profile-hero { text-align: center; padding: 30px 20px; background: white; border-bottom: 1px solid #eee; margin-bottom: 10px; }
+.avatar-large { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; background: #ddd; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.verified-badge { color: var(--success); font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 5px; background: #e8f5e9; padding: 5px 10px; border-radius: 15px; display: inline-flex; }
+.menu-list div { padding: 15px; background: white; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.95rem; }
+.upload-box { border: 2px dashed #ddd; border-radius: 10px; height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #888; cursor: pointer; background: #fdfdfd; margin-bottom: 15px; }
+.report-item { padding: 15px; border-bottom: 1px solid #eee; background: white; margin-bottom: 10px; border-radius: 10px; }
+.report-item:hover { background: #f9f9f9; }
+.report-title { font-weight: 600; margin-bottom: 5px; }
+.report-meta { font-size: 0.8rem; color: #999; }
+.status-badge {
+    display: inline-block; padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 500;
+}
+.status-open { background: var(--warning); color: white; }
+.status-inprogress { background: var(--primary-color); color: white; }
+.status-resolved { background: var(--success); color: white; }
+/* UTILITIES */
+.text-center { text-align: center; }
+.mb-15 { margin-bottom: 15px; }
+.mt-15 { margin-top: 15px; }
+.p-15 { padding: 15px; }
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+.d-flex { display: flex; }
+.jc-center { justify-content: center; }
+.ai-center { align-items: center; }
+.gap-10 { gap: 10px; }
+.cursor-pointer { cursor: pointer; }
+.shadow-sm { box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.rounded-lg { border-radius: 15px; }
+.text-primary { color: var(--primary-color); }
+.text-danger { color: var(--danger); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.italic { font-style: italic; }
+
+/* Scrollbar Hidden for Horizontal Scroll */
+.horizontal-scroll::-webkit-scrollbar,
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+/* =========================================
+   LOGIN PAGE CUSTOMIZATION (LEVEL 2)
+   ========================================= */
+/* ปรับ Body ให้รองรับพื้นหลัง */
+body#page-login {
+    background: url('../images/bg-login.jpg') no-repeat center center fixed; /* ใส่ URL รูป ม.พะเยา ตรงนี้ */
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    backdrop-filter: brightness(0.8); /* ทำให้รูปพื้นหลังมืดลงนิดหน่อย */
+    margin: 0; /* ลบ margin เดิม */
+}
+
+/* ซ่อน Header เดิมในหน้า Login เพราะเราจะเอาโลโก้มาไว้ในกล่องแทน */
+#page-login .auth-header {
+    display: none;
+}
+
+/* ปรับแต่งกล่อง Login ใหม่ (พระเอกของเรา) */
+#page-login .form-card {
+    background: rgba(255, 255, 255, 0.95); /* สีขาวโปร่งแสงนิดๆ */
+    width: 100%;
+    max-width: 420px; /* ไม่ให้กว้างเกินไป */
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* เงาฟุ้งๆ ให้ดูลอยออกมา */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* เพิ่มแถบสีม่วงด้านบนของกล่องการ์ด */
+#page-login .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+}
+
+/* ปรับแต่ง Input ให้ดูดีขึ้น */
+#page-login .form-input {
+    background: #f3f4f6;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+#page-login .form-input:focus {
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(120, 40, 140, 0.1);
+}
+
+/* ปรับปุ่มให้เด้งดึ๋ง */
+#page-login .btn-primary {
+    border-radius: 50px; /* ปุ่มมนกลม */
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.2s;
+}
+
+#page-login .btn-primary:hover {
+    transform: translateY(-3px); /* ลอยขึ้นเมื่อเอาเมาส์ชี้ */
+    box-shadow: 0 5px 15px rgba(120, 40, 140, 0.4);
+}
+
+#page-login .btn-secondary {
+    border-radius: 50px;
+}
+/* ตัวอย่างการใช้ไฟล์ในเครื่อง */
+
+/* จุดที่ 1 (คอม) */
+#page-login .split-left {
+   /* ... */
+   background: url('../images/bg-login.jpg') no-repeat center center;
+   /* ... */
+}
+
+/* จุดที่ 2 (มือถือ) */
+@media (max-width: 768px) {
+   #page-login .split-right {
+       /* ... */
+       background: url('../images/bg-login.jpg') no-repeat center center;
+   }
+}
+/* =========================================
+   LOGIN SPLIT SCREEN (LEVEL 3)
+   ========================================= */
+
+/* ตั้งค่าเฉพาะหน้า Login เพื่อไม่ให้กระทบหน้าอื่น */
+body#page-login {
+    background: white; /* รีเซ็ตพื้นหลัง */
+    overflow: hidden; /* ซ่อน Scrollbar */
+}
+
+/* คอนเทนเนอร์หลักแบ่งครึ่งหน้าจอ */
+#page-login .split-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* --- ฝั่งซ้าย (รูปภาพ) --- */
+#page-login .split-left {
+    flex: 1.2; /* กว้างกว่าฝั่งขวานิดหน่อย (60%) */
+    background: url('../images/bg-login.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* เลเยอร์สีม่วงทับรูปภาพให้อ่านตัวหนังสือออก */
+#page-login .brand-overlay {
+    background: rgba(74, 20, 140, 0.85); /* สีม่วงโปร่งแสง */
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    width: 80%;
+    max-width: 500px;
+}
+
+#page-login .brand-overlay h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* --- ฝั่งขวา (ฟอร์ม) --- */
+#page-login .split-right {
+    flex: 0.8; /* (40%) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+}
+
+#page-login .login-box {
+    width: 100%;
+    max-width: 380px;
+}
+
+#page-login .login-box h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* ช่องกรอกข้อมูลแบบใหม่ (มีไอคอนข้างใน) */
+#page-login .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#page-login .input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+#page-login .input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* เว้นที่ให้ไอคอน */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+#page-login .input-group input:focus {
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(120, 40, 140, 0.1);
+}
+
+#page-login .mobile-logo { display: none; }
+
+/* --- Mobile Responsive (มือถือ) --- */
+@media (max-width: 768px) {
+    #page-login .split-container {
+        flex-direction: column;
+    }
+    
+    #page-login .split-left {
+        display: none; /* ซ่อนภาพฝั่งซ้ายเมื่อจอมือถือเล็ก */
+    }
+    
+    #page-login .split-right {
+        flex: 1;
+        background: url('../images/bg-login.jpg') no-repeat center center;
+        background-size: cover;
+    }
+
+    /* สร้างกล่องขาวลอยตรงกลางมือถือ */
+    #page-login .login-box {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    #page-login .mobile-logo {
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+}
+/* =========================================
+   LOGIN SPLIT SCREEN (FINAL VERSION)
+   ========================================= */
+
+/* 1. ตั้งค่าหน้าจอ Login */
+body#page-login {
+    background: white;
+    overflow: hidden; /* ซ่อน Scrollbar */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. คอนเทนเนอร์แบ่งครึ่ง */
+#page-login .split-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 3. ฝั่งซ้าย (รูปภาพ) */
+#page-login .split-left {
+    flex: 1.2; /* กว้าง 60% */
+    background: url('../images/bg-login.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+#page-login .brand-overlay {
+    background: rgba(74, 20, 140, 0.85);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    width: 80%;
+    max-width: 500px;
+}
+#page-login .brand-overlay h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* 4. ฝั่งขวา (ฟอร์ม) */
+#page-login .split-right {
+    flex: 0.8; /* กว้าง 40% */
+    display: flex;
+    flex-direction: column; /* เรียงแนวตั้ง */
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    position: relative; /* เพื่อให้ Footer อ้างอิงได้ */
+}
+
+#page-login .login-box {
+    width: 100%;
+    max-width: 380px;
+}
+
+/* 5. Input สวยๆ */
+#page-login .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+#page-login .input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    z-index: 2;
+}
+#page-login .input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #f8f9fa;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+#page-login .input-group input:focus {
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 4px 15px rgba(120, 40, 140, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 6. ปุ่ม Google และเส้นคั่น */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #ccc;
+    font-size: 0.8rem;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+.divider span { padding: 0 10px; }
+
+.btn-google {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #555;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-google:hover { background: #f9f9f9; border-color: #ccc; }
+.btn-google i { color: #DB4437; }
+
+/* 7. Footer และ Mobile Logo */
+.login-footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+#page-login .mobile-logo { display: none; }
+
+/* 8. Mobile Responsive */
+@media (max-width: 768px) {
+    #page-login .split-container { flex-direction: column; }
+    #page-login .split-left { display: none; } /* ซ่อนฝั่งซ้ายบนมือถือ */
+    
+    #page-login .split-right {
+        flex: 1;
+        background: url('../images/bg-login.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    
+    #page-login .login-box {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    #page-login .mobile-logo {
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    .login-footer { color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+}

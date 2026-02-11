@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียด</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-detail">
+    <div class="main-header">
+        <i class="fas fa-arrow-left header-icon" onclick="window.history.back()"></i>
+        <span style="font-weight:600;">รายละเอียดสินค้า</span>
+        <i id="btn-report" class="fas fa-exclamation-circle" style="color:var(--danger); cursor:pointer;"></i>
+    </div>
+
+    <img id="d-img" src="" style="width:100%; height:300px; object-fit:cover; background:#eee;">
+
+    <div style="padding: 20px; background:white; border-radius:20px 20px 0 0; margin-top:-20px; position:relative; min-height:60vh;">
+        <div style="display:flex; justify-content:space-between; align-items:start;">
+            <h2 id="d-title" style="margin-bottom:5px;">Loading...</h2>
+            <div id="d-cat" style="background:var(--secondary-color); padding:2px 8px; border-radius:10px; font-size:0.8rem; color:var(--primary-color);">...</div>
+        </div>
+        <div id="d-price" style="font-size:1.8rem; color:var(--primary-color); font-weight:bold;">...</div>
+        
+        <div style="margin:15px 0; background:#f0f9ff; padding:10px; border-radius:10px;">
+            <div style="color:#2980b9; font-size:0.9rem;"><i class="fas fa-map-marker-alt"></i> จุดนัดรับ</div>
+            <div id="d-meeting" style="font-weight:600;">...</div>
+        </div>
+
+        <h4 style="margin-bottom:5px;">รายละเอียด</h4>
+        <p id="d-desc" style="color:#666; line-height:1.6;">...</p>
+
+        <div style="margin:20px 0; border:1px solid #eee; padding:15px; border-radius:10px;">
+            <h4 style="margin-bottom:10px;">ผู้ขาย</h4>
+            <div style="display:flex; align-items:center;">
+                <img id="d-seller-img" src="" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:15px;">
+                <div>
+                    <div id="d-seller-name" style="font-weight:600;">...</div>
+                    <div style="display:flex; align-items:center; gap:5px; margin-top:3px;">
+                        <i class="fas fa-phone-alt" style="color:var(--success);"></i>
+                        <span id="d-contact">...</span>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size:0.75rem; color:red; margin-top:10px;">*โปรดตรวจสอบเครดิตผู้ขายก่อนโอนเงิน</div>
+        </div>
+
+        <div id="d-actions">
+            </div>
+    </div>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

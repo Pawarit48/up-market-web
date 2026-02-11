@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลืมรหัสผ่าน</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-header" style="background:#e74c3c;">
+        <i class="fas fa-arrow-left auth-back-btn" onclick="window.location.href='login-screen.html'"></i>
+        ลืมรหัสผ่าน
+    </div>
+    <div class="auth-form-container">
+        <div class="form-card">
+            <div style="text-align: center; margin-bottom:20px;">
+                <i class="fas fa-exclamation-triangle" style="font-size:3rem; color:#e74c3c;"></i>
+            </div>
+            <p style="text-align:center; color:#666;">กรอกรหัสนิสิตเพื่อแจ้งผู้ดูแลระบบ</p>
+            <input type="text" class="form-input" placeholder="รหัสนิสิต" style="margin-top:15px;">
+            <button class="btn-primary" style="background:#e74c3c;" onclick="alert('แจ้งแล้ว'); window.location.href='login-screen.html'">แจ้งลืมรหัสผ่าน</button>
+        </div>
+    </div>
+</body>
+</html>

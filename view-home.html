@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรก</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-home">
+    
+    <div class="main-header">
+        <div class="brand-title"><i class="fas fa-shopping-bag"></i> UP Market</div>
+        <div class="header-actions">
+            <div style="position:relative;" onclick="showNotifications()">
+                <i class="fas fa-bell header-icon"></i>
+                <div id="notif-badge" class="notif-badge" style="display:none;">0</div>
+            </div>
+            <i class="fas fa-user-circle header-icon" onclick="window.location.href='view-account.html'"></i>
+        </div>
+    </div>
+
+    <div style="padding:15px; background:white;">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="ค้นหาสินค้า..." onkeyup="renderProducts()">
+        </div>
+    </div>
+
+    <div class="section-header">
+        <div class="section-title"><i class="fas fa-star" style="color:gold;"></i> สินค้าแนะนำ</div>
+    </div>
+    <div class="horizontal-scroll" id="rec-product-scroll">
+        </div>
+
+    <div class="section-header">
+        <div class="section-title">หมวดหมู่</div>
+    </div>
+    <div class="category-scroll">
+        <div class="cat-item active" onclick="updateCategory('all', this)"><div class="cat-icon"><i class="fas fa-th-large"></i></div><span class="cat-name">ทั้งหมด</span></div>
+        <div class="cat-item" onclick="updateCategory('clothes', this)"><div class="cat-icon"><i class="fas fa-tshirt"></i></div><span class="cat-name">เสื้อผ้า</span></div>
+        <div class="cat-item" onclick="updateCategory('shoes', this)"><div class="cat-icon"><i class="fas fa-shoe-prints"></i></div><span class="cat-name">รองเท้า</span></div>
+        <div class="cat-item" onclick="updateCategory('hats', this)"><div class="cat-icon"><i class="fas fa-hat-cowboy"></i></div><span class="cat-name">หมวก</span></div>
+        <div class="cat-item" onclick="updateCategory('books', this)"><div class="cat-icon"><i class="fas fa-book"></i></div><span class="cat-name">หนังสือ</span></div>
+        <div class="cat-item" onclick="updateCategory('it', this)"><div class="cat-icon"><i class="fas fa-mobile-alt"></i></div><span class="cat-name">อิเล็กทรอนิกส์</span></div>
+        <div class="cat-item" onclick="updateCategory('other', this)"><div class="cat-icon"><i class="fas fa-box"></i></div><span class="cat-name">ของใช้ทั่วไป</span></div>
+        <div class="cat-item" onclick="updateCategory('other', this)"><div class="cat-icon"><i class="fas fa-cube"></i></div><span class="cat-name">อื่นๆ</span></div>
+    </div>
+
+    <div class="section-header">
+        <div class="section-title"><i class="fas fa-layer-group"></i> สินค้าล่าสุด</div>
+        <div style="display:flex; gap:5px;">
+            <button class="sort-btn" onclick="updateSort('low')"><i class="fas fa-sort-amount-down-alt"></i> ถูก-แพง</button>
+            <button class="sort-btn" onclick="updateSort('high')"><i class="fas fa-sort-amount-up"></i> แพง-ถูก</button>
+        </div>
+    </div>
+    <div id="home-product-grid" class="product-grid"></div>
+
+    <div class="bottom-nav">
+        <div class="nav-item active" onclick="window.location.href='view-home.html'"><i class="fas fa-home nav-icon"></i>หน้าแรก</div>
+        <div class="fab-sell" onclick="window.location.href='view-sell.html'"><i class="fas fa-plus"></i></div>
+        <div class="nav-item" onclick="window.location.href='view-account.html'"><i class="fas fa-user nav-icon"></i>บัญชี</div>
+    </div>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

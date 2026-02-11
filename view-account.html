@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บัญชี</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-account">
+    <div class="profile-hero">
+        <img id="acc-img" class="avatar-large" src="https://placehold.co/100">
+        <h2 id="acc-name" style="margin-top:10px;">User Name</h2>
+        
+        <div id="acc-verified" class="verified-badge hidden">
+            <i class="fas fa-check-circle"></i> ยืนยันตัวตนแล้ว <span id="acc-verified-text"></span>
+        </div>
+
+        <p id="acc-detail" style="color:#777; font-size:0.9rem; margin-top:5px;">...</p>
+        <p id="acc-contact" style="color:#555; font-size:0.9rem;">...</p>
+        
+        <button class="sort-btn" style="margin:10px auto;" onclick="window.location.href='view-edit-profile.html'">
+            <i class="fas fa-edit"></i> แก้ไขโปรไฟล์
+        </button>
+    </div>
+
+    <div id="menu-user" class="menu-list">
+        <div onclick="window.location.href='view-my-products.html'"><span><i class="fas fa-box" style="color:var(--primary-color); width:25px;"></i> สินค้าของฉัน</span> <i class="fas fa-chevron-right" style="color:#ccc;"></i></div>
+        <div onclick="window.location.href='view-history.html'"><span><i class="fas fa-history" style="color:var(--primary-color); width:25px;"></i> ประวัติการซื้อขาย</span> <i class="fas fa-chevron-right" style="color:#ccc;"></i></div>
+        <div onclick="window.location.href='view-user-report.html'"><span><i class="fas fa-headset" style="color:var(--primary-color); width:25px;"></i> ติดต่อเจ้าหน้าที่</span> <i class="fas fa-chevron-right" style="color:#ccc;"></i></div>
+        <div onclick="window.location.href='view-web-info.html'"><span><i class="fas fa-info-circle" style="color:var(--primary-color); width:25px;"></i> เกี่ยวกับเรา</span> <i class="fas fa-chevron-right" style="color:#ccc;"></i></div>
+    </div>
+
+    <div id="menu-admin" class="menu-list hidden">
+        <div onclick="window.location.href='view-admin-reports.html'"><span><i class="fas fa-envelope-open-text" style="color:var(--danger); width:25px;"></i> กล่องข้อความ / แจ้งปัญหา</span> <i class="fas fa-chevron-right" style="color:#ccc;"></i></div>
+        <div onclick="window.location.href='view-home.html'"><span><i class="fas fa-trash-alt" style="color:var(--danger); width:25px;"></i> จัดการสินค้า (หน้าแรก)</span> <i class="fas fa-chevron-right" style="color:#ccc;"></i></div>
+    </div>
+
+    <div class="menu-list" style="margin-top:10px;">
+        <div onclick="handleLogout()" style="color:var(--danger);"><span><i class="fas fa-sign-out-alt" style="width:25px;"></i> ออกจากระบบ</span></div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='view-home.html'"><i class="fas fa-home nav-icon"></i>หน้าแรก</div>
+        <div class="fab-sell" onclick="window.location.href='view-sell.html'"><i class="fas fa-plus"></i></div>
+        <div class="nav-item active" onclick="window.location.href='view-account.html'"><i class="fas fa-user nav-icon"></i>บัญชี</div>
+    </div>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

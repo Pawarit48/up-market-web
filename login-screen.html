@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ - UP Market</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-login">
+    
+    <div class="split-container">
+        <div class="split-left">
+            <div class="brand-overlay">
+                <i class="fas fa-shopping-bag" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                <h1>UP Market</h1>
+                <p>ตลาดนัดออนไลน์ สำหรับนิสิต ม.พะเยา</p>
+                <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 10px;">ซื้อง่าย ขายคล่อง สะดวก ปลอดภัย</p>
+            </div>
+        </div>
+
+        <div class="split-right">
+            <div class="login-box">
+                <div class="mobile-logo">
+                    <i class="fas fa-shopping-bag"></i> UP Market
+                </div>
+                
+                <h2 style="font-weight: 700; color: #4a148c;">ยินดีต้อนรับกลับมา!</h2>
+                <p style="color:#888; margin-bottom: 30px; font-weight: 300;">กรอกข้อมูลเพื่อเข้าใช้งานระบบ</p>
+
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="login-id" placeholder="รหัสนิสิต / User ID">
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-pass" placeholder="รหัสผ่าน">
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px; font-size: 0.85rem;">
+                    <label style="color:#666; cursor:pointer;">
+                        <input type="checkbox" style="margin-right:5px;"> จำรหัสผ่าน
+                    </label>
+                    <a href="forgot-screen.html" style="color: #78288c; font-weight:600;">ลืมรหัสผ่าน?</a>
+                </div>
+
+                <button class="btn-primary" onclick="handleLogin()">เข้าสู่ระบบ</button>
+
+                <div class="divider"><span>หรือ</span></div>
+
+                <button class="btn-google">
+                    <i class="fab fa-google"></i> เข้าสู่ระบบด้วย Google
+                </button>
+
+                <div style="margin-top: 25px; text-align: center; font-size: 0.9rem; color: #666;">
+                    ยังไม่มีบัญชีใช่ไหม? 
+                    <a href="register-screen.html" style="color: #78288c; font-weight: bold;">สมัครสมาชิก</a>
+                </div>
+            </div>
+
+            <div class="login-footer">
+                &copy; 2026 UP Market Project. All rights reserved.<br>
+                <span style="font-size: 0.8rem; color: #ccc;">Developed by UP Student</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

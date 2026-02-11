@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงขาย</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-sell">
+    <div class="main-header">
+        <div class="brand-title"><i class="fas fa-arrow-left header-icon" onclick="window.location.href='view-home.html'"></i> ลงขายสินค้า</div>
+    </div>
+
+    <div style="padding: 20px;">
+        <div class="form-card">
+            <label class="form-label">รูปภาพสินค้า</label>
+            <div class="upload-box" onclick="document.getElementById('sell-file').click()">
+                <img id="sell-preview" style="display:none; width:100%; height:100%; object-fit:cover;">
+                <div id="sell-placeholder">
+                    <i class="fas fa-camera" style="font-size:2rem;"></i>
+                    <p>รูปหลัก</p>
+                </div>
+            </div>
+            <input type="file" id="sell-file" style="display: none;" onchange="previewSell(this)">
+            
+            <div style="text-align:right; font-size:0.8rem; color:var(--primary-color);">+ เพิ่มรูปเพิ่มเติม (จำลอง)</div>
+
+            <label class="form-label">ชื่อสินค้า</label>
+            <input type="text" id="sell-title" class="form-input">
+
+            <label class="form-label">ราคา (บาท)</label>
+            <input type="number" id="sell-price" class="form-input">
+
+            <label class="form-label">หมวดหมู่</label>
+            <select id="sell-cat" class="form-input">
+                <option value="clothes">เสื้อผ้า</option>
+                <option value="shoes">รองเท้า</option>
+                <option value="books">หนังสือ</option>
+                <option value="it">IT</option>
+                <option value="other">อื่นๆ</option>
+            </select>
+
+            <label class="form-label">จุดนัดรับ (ภายใน ม.พะเยา)</label>
+            <select id="sell-meeting" class="form-input">
+                <option>อาคารเรียนรวม (PKY)</option>
+                <option>ตึกคณะ ICT</option>
+                <option>โรงอาหารกิจกรรม</option>
+                <option>หน้าหอพัก UP Dorm</option>
+                <option>หน้ามอ (7-11 / Lotus)</option>
+                <option>อื่นๆ</option>
+            </select>
+
+            <label class="form-label">รายละเอียดสินค้า</label>
+            <textarea id="sell-desc" class="form-input" rows="3"></textarea>
+
+            <label class="form-label">ช่องทางติดต่อ</label>
+            <input type="text" id="sell-contact" class="form-input" placeholder="Line ID หรือ เบอร์โทร">
+
+            <div style="margin-top:10px; display:flex; align-items:center;">
+                <input type="checkbox" id="sell-rec" style="width:20px; height:20px;">
+                <span style="margin-left:10px;">โปรโมทใน "สินค้าแนะนำ"</span>
+            </div>
+
+            <button class="btn-primary" onclick="submitProduct()">ลงขาย</button>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='view-home.html'"><i class="fas fa-home nav-icon"></i>หน้าแรก</div>
+        <div class="fab-sell" onclick="window.location.href='view-sell.html'"><i class="fas fa-plus"></i></div>
+        <div class="nav-item" onclick="window.location.href='view-account.html'"><i class="fas fa-user nav-icon"></i>บัญชี</div>
+    </div>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
